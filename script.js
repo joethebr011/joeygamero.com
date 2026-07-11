@@ -1,9 +1,9 @@
-const nav = document.querySelector("#navbar");
+const nav=document.querySelector("#navbar");
 
 
 window.addEventListener("scroll",()=>{
 
-if(window.scrollY > 40){
+if(window.scrollY>40){
 
 nav.classList.add("scrolled");
 
@@ -21,14 +21,11 @@ nav.classList.remove("scrolled");
 
 
 
-const reveals=document.querySelectorAll(".reveal");
+const observer=new IntersectionObserver(
 
-
-const observer=new IntersectionObserver(entries=>{
-
+entries=>{
 
 entries.forEach(entry=>{
-
 
 if(entry.isIntersecting){
 
@@ -36,42 +33,46 @@ entry.target.classList.add("visible");
 
 }
 
-
 });
 
+},
 
-});
+{
+threshold:.15
+}
 
-
-reveals.forEach(el=>observer.observe(el));
-
-
-
-
+);
 
 
-const buttons=document.querySelectorAll(".expand");
+
+document.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
 
 
-buttons.forEach(button=>{
+
+
+
+
+
+document.querySelectorAll(".expand")
+.forEach(button=>{
 
 
 button.addEventListener("click",()=>{
 
 
-const detail =
-button.nextElementSibling;
+let detail=button.nextElementSibling;
 
 
 detail.classList.toggle("show");
 
 
-button.innerHTML =
+button.textContent=
 detail.classList.contains("show")
 ?
-"Hide Details ↑"
+"Hide Details"
 :
-"View Details ↓";
+"Explore Project";
 
 
 });
