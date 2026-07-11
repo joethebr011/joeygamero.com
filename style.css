@@ -1,11 +1,18 @@
 * {
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
+
+
+html {
+    scroll-behavior:smooth;
+}
+
 
 
 body {
 
     margin:0;
+
     font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -15,26 +22,33 @@ body {
     sans-serif;
 
     color:#111;
+
     background:#fff;
 
 }
 
 
+
 nav {
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
-    padding:30px 8%;
+    padding:35px 8%;
 
 }
+
 
 
 .logo {
 
     font-size:28px;
+
     font-weight:700;
+
     letter-spacing:-2px;
 
 }
@@ -43,47 +57,78 @@ nav {
 
 .links a {
 
-    text-decoration:none;
     color:#555;
+
+    text-decoration:none;
+
     margin-left:35px;
 
+    transition:.3s;
+
 }
+
+
+.links a:hover {
+
+    color:#111;
+
+}
+
+
 
 
 
 .hero {
 
     padding:120px 8% 160px;
+
     max-width:1200px;
 
 }
 
 
-.tag {
 
-    color:#666;
-    font-size:15px;
+.eyebrow,
+.section-label {
+
+    font-size:14px;
+
+    color:#777;
+
+    letter-spacing:2px;
 
 }
 
 
 
-h1 {
+.hero h1 {
 
     font-size:
-    clamp(55px,8vw,110px);
+    clamp(70px,10vw,130px);
 
-    line-height:.95;
-    letter-spacing:-5px;
+    letter-spacing:-6px;
+
+    line-height:.9;
 
     margin:30px 0;
 
 }
 
 
-h1 span {
 
-    color:#777;
+
+.hero h2 {
+
+    max-width:900px;
+
+    font-size:
+    clamp(30px,4vw,55px);
+
+    line-height:1.1;
+
+    letter-spacing:-2px;
+
+    font-weight:500;
 
 }
 
@@ -91,14 +136,64 @@ h1 span {
 
 .intro {
 
-    max-width:600px;
+    max-width:650px;
 
     font-size:22px;
-    line-height:1.5;
+
+    color:#555;
+
+    line-height:1.6;
+
+    margin-top:35px;
+
+}
+
+
+
+
+
+.status {
+
+    margin-top:40px;
 
     color:#555;
 
 }
+
+
+
+.status span {
+
+    display:inline-block;
+
+    width:10px;
+
+    height:10px;
+
+    background:#111;
+
+    border-radius:50%;
+
+    margin-right:10px;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+
+@keyframes pulse {
+
+50% {
+
+opacity:.3;
+
+}
+
+}
+
+
 
 
 
@@ -113,7 +208,10 @@ h1 span {
 .primary,
 .secondary {
 
-    padding:15px 28px;
+    display:inline-block;
+
+    padding:15px 30px;
+
     border-radius:50px;
 
     text-decoration:none;
@@ -127,45 +225,67 @@ h1 span {
 .primary {
 
     background:#111;
+
     color:white;
 
 }
 
 
+
 .secondary {
 
     border:1px solid #ccc;
+
     color:#111;
 
 }
 
 
 
+
+
 section {
 
-    padding:80px 8%;
+    padding:100px 8%;
 
 }
 
 
 
-h2 {
+.section-title {
 
-    font-size:50px;
-    letter-spacing:-2px;
+    font-size:
+    clamp(40px,5vw,65px);
+
+    letter-spacing:-3px;
+
+    max-width:900px;
 
 }
+
+
 
 
 
 .project {
 
     display:grid;
+
     grid-template-columns:1fr 1fr;
 
-    gap:60px;
+    gap:70px;
 
-    margin-top:60px;
+    align-items:center;
+
+    margin-top:90px;
+
+}
+
+
+
+.project.reverse img {
+
+    order:2;
 
 }
 
@@ -174,7 +294,18 @@ h2 {
 .project img {
 
     width:100%;
-    border-radius:25px;
+
+    border-radius:30px;
+
+    transition:.4s;
+
+}
+
+
+
+.project:hover img {
+
+    transform:translateY(-8px);
 
 }
 
@@ -184,6 +315,8 @@ h2 {
 
     color:#999;
 
+    letter-spacing:2px;
+
 }
 
 
@@ -191,16 +324,35 @@ h2 {
 h3 {
 
     font-size:45px;
-    margin:10px 0;
+
+    letter-spacing:-2px;
 
 }
 
 
 
-.project p {
+.description {
 
-    font-size:20px;
+    color:#555;
+
+    font-size:21px;
+
     line-height:1.6;
+
+}
+
+
+
+
+.details {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+    margin-top:35px;
 
     color:#555;
 
@@ -210,7 +362,7 @@ h3 {
 
 .skills {
 
-    margin-top:30px;
+    margin-top:35px;
 
     color:#777;
 
@@ -218,11 +370,57 @@ h3 {
 
 
 
-#about p {
 
-    max-width:700px;
+
+.about p {
+
+    max-width:800px;
+
     font-size:25px;
-    line-height:1.5;
+
+    line-height:1.6;
+
+    color:#555;
+
+}
+
+
+
+
+
+.timeline {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+
+
+.timeline div {
+
+    padding:30px;
+
+    border:1px solid #ddd;
+
+    border-radius:20px;
+
+    color:#555;
+
+}
+
+
+
+
+
+#contact a {
+
+    color:#111;
 
 }
 
@@ -231,25 +429,82 @@ h3 {
 footer {
 
     padding:50px 8%;
+
     color:#777;
 
 }
 
 
 
+
+
+
 @media(max-width:800px){
 
-.project{
+
+nav {
+
+padding:25px;
+
+}
+
+
+
+.links a {
+
+margin-left:15px;
+
+}
+
+
+
+.hero {
+
+padding:80px 25px;
+
+}
+
+
+
+section {
+
+padding:70px 25px;
+
+}
+
+
+
+.hero h1 {
+
+letter-spacing:-3px;
+
+}
+
+
+
+.project,
+.details,
+.timeline {
 
 grid-template-columns:1fr;
 
 }
 
 
-h1{
 
-letter-spacing:-3px;
+.project.reverse img {
+
+order:0;
 
 }
+
+
+
+h3 {
+
+font-size:38px;
+
+}
+
 
 }
