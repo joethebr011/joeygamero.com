@@ -63,6 +63,6 @@ Every push to the main branch automatically updates the live website.
 Contact
 Website: joeygamero.com
 GitHub: github.com/joethebr011
-LinkedIn: Add your LinkedIn URL here
+LinkedIn: https://www.linkedin.com/in/joeygamero/
 
 Built by Joey Gamero
